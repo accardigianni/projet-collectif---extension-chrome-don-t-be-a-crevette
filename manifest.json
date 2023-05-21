@@ -1,0 +1,40 @@
+{
+    "manifest_version": 3,
+    "name": "Don't be a crevette",
+    "description": "get a good health with this add on",
+    "version": "1.0",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "icons": {
+        "16": "crevette_16px.png",
+        "24": "crevette_24px.png",
+        "32": "crevette_32_px.png",
+        "48": "crevette_48px.png",
+        "128": "crevette_128px.png"
+      },
+    "action": {
+        "default_popup": "index.html"
+    },
+    "permissions": [
+        "notifications",
+        "storage",
+        "alarms",
+        "notifications",
+        "scripting",
+        "activeTab"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*/*"
+            ],
+            "css": [
+                "styles.css"
+            ],
+            "js": [
+                "contentScript.js"
+            ]
+        }
+    ]
+}
